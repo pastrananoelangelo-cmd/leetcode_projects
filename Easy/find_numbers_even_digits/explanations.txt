@@ -1,0 +1,4 @@
+Pattern: Digit Extraction + Counting
+Data structure: Array
+Invariant: Find Numbers with Even Number of Digits
+Time complexity: O(n * log10(maxNum)), each digit division shrinks number by factor of 10.

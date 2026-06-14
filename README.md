@@ -1,1 +1,1 @@
-# leetcode_projects
+# Leetcode project

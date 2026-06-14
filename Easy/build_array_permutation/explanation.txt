@@ -1,0 +1,12 @@
+Pattern:
+In-place Encoding
+
+Data Structure:
+Array
+
+Invariant:
+Each element temporarily stores:
+(new_value * n + old_value)
+
+Time:
+O(n)

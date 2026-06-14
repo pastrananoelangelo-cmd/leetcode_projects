@@ -1,0 +1,6 @@
+Pattern: Running Count / Streak Tracking
+Data structure: Array
+Invariant: 
+count = length of current consecutive ones streak
+max = largest streak encountered so far
+Time complexity: O(n)

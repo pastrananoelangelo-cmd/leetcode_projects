@@ -1,0 +1,4 @@
+Pattern: Two Pointers (Read / Write)
+Data structure: Array
+Invariant: Elements before write pointer are always valid.
+Time complexity: O(n)

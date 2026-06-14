@@ -1,0 +1,4 @@
+Pattern: Running Total
+Data structure: Array
+Invariant: nums[i] stores sum of elements from 0 to i
+Time complexity: O(n)

@@ -1,0 +1,4 @@
+Pattern: Array Traversal + Index Mapping
+Data structure: Array
+Invariant: Repeating orders.
+Time complexity: O(n)

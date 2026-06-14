@@ -1,0 +1,7 @@
+Pattern: Nested Traversal + Aggregation
+Data structure: 2D Array
+Invariant: 
+curr = wealth of current customer
+max = highest wealth seen
+
+Time complexity: O(n × m)

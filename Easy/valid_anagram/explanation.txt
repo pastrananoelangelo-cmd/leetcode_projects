@@ -1,0 +1,12 @@
+Pattern:
+Store the first string in HashMap. Use second string to cancel out the map. Check if all the values in the map is zero, if not, return false.
+
+Data Structure:
+HashMap<Character, Integer>
+
+Invariant:
+map[c] = 
+processed occurrences in s − processed occurrences in t
+
+Time Complexity:
+O(n)

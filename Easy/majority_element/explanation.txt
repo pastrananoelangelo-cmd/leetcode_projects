@@ -1,0 +1,14 @@
+Pattern:
+Frequency Counting + Early Termination
+
+Data Structure:
+HashMap<Integer, Integer>
+
+Invariant:
+map[x]
+=
+number of occurrences of x
+inside nums[0...i]
+
+Time Complexity:
+O(n)

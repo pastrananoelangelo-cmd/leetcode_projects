@@ -1,0 +1,12 @@
+Pattern:
+Two Pointers (Converging Pointers)
+
+Data Structure:
+Array
+
+Invariant:
+Everything outside the pointers
+is already in its final position.
+
+Time Complexity:
+O(n)

@@ -1,0 +1,17 @@
+Pattern:
+Frequency Counting + Second Pass Selection
+
+Data Structure:
+HashMap<Character, Integer>
+
+Invariant:
+First Loop: 
+map contains complete frequency counts.
+
+Second Loop: 
+all indices before i
+have already been confirmed
+NOT to be unique.
+
+Time Complexity:
+O(n)

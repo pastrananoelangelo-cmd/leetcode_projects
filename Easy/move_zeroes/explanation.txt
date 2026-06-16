@@ -1,0 +1,12 @@
+Pattern:
+Two Pointers (Read / Write)
+
+Data Structure:
+Array
+
+Invariant:
+At every iteration: nums[0...write-1]
+contains: all non-zero elements processed so far in original order
+
+Time Complexity:
+O(n)

@@ -1,0 +1,4 @@
+Pattern: Check difference, if in Hashmap, return, else, store.
+Data structure: HashMap, Array
+Invariant: For every entry (num > index), we have already processed it and checked all valid pairs with future elements so far.
+Time complexity: O(n)

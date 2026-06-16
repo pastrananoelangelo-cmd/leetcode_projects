@@ -1,0 +1,12 @@
+Pattern:
+Two Pointers (Read / Write)
+
+Data Structure:
+Array
+
+Invariant:
+At every iteration: nums[0...valid-1]
+contains: the unique sorted elements found so far
+
+Time Complexity:
+O(n)

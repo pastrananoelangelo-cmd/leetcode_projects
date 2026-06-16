@@ -1,0 +1,25 @@
+Pattern:
+Set Intersection
+
+Data Structure:
+HashSet<Integer>
+set1 = reference values
+set2 = unique result values
+
+Invariant:
+First Loop:
+After processing i,
+set1 contains all unique values
+from nums1[0...i]
+
+Second Loop:
+After processing i,
+set2 contains all unique values
+that appeared in both arrays
+so far.
+
+Time Complexity:
+n = First Array
+m = Second Array
+k = Size of Intersection
+O(n + m + k)

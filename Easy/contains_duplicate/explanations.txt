@@ -1,0 +1,4 @@
+Pattern: Create HashSet, if duplicate in set, return true, else store the value.
+Data structure: HashSet, Array
+Invariant: set contains all unique elements from nums[0...i-1]
+Time complexity: O(n)

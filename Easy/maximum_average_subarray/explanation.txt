@@ -1,0 +1,12 @@
+Pattern:
+Sliding Window, Two Pointers
+
+Data Structure:
+Array
+
+Invariant:
+curr = sum of current window
+max = largest window sum seen so far
+
+Time Complexity:
+O(n)

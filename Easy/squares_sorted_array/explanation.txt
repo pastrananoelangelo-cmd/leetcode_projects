@@ -1,0 +1,16 @@
+Pattern:
+Two Pointers (Competing Extremes)
+or
+Build Output from End
+
+Data Structure:
+Array
+
+Invariant:
+At every iteration: ans[i+1 ... end]
+already contains: the largest squared values in correct sorted order
+Meanwhile: nums[left ... right]
+contains: elements not processed yet
+
+Time Complexity:
+O(n)

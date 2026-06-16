@@ -1,0 +1,12 @@
+Pattern:
+Two Pointers with Character Filtering
+
+Data Structure:
+String
+
+Invariant:
+All characters outside [left, right] are already validated
+left and right always point to valid characters
+
+Time Complexity:
+O(n)

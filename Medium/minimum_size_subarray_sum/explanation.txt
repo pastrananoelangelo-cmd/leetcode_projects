@@ -1,0 +1,12 @@
+Pattern:
+Sliding Window, keep moving right until greater than or equal to target, else shrink by moving left.
+
+Data Structure:
+Array
+
+Invariant:
+While ans < target: Keep adding the next number!
+While else: Get min, if less than min, replace. Then, move left pointer to the right, until ans < target.
+
+Time Complexity:
+O(n)

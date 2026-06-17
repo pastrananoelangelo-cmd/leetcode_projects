@@ -1,0 +1,12 @@
+Pattern:
+Variable Size Sliding Window + HashSet
+window invalid -> shrink until valid
+
+Data Structure:
+HashSet
+
+Invariant:
+At every iteration: set = all unique characters inside window [valid...i]
+
+Time Complexity:
+O(n)

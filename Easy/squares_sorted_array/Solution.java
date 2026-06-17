@@ -1,4 +1,4 @@
-package squares_sorted_array;
+package easy.squares_sorted_array;
 
 class Solution {
     public int[] sortedSquares(int[] nums) {

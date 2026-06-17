@@ -1,0 +1,13 @@
+Pattern:
+Process characters left to right.
+If the current character matches the most recent surviving character, cancel both. 
+Otherwise, keep the current character.
+
+Data Structure:
+Stack
+
+Invariant:
+Every char in stack has not found any adjacent character.
+
+Time Complexity:
+O(n)

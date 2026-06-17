@@ -1,4 +1,4 @@
-package intersection_two_arrays;
+package easy.intersection_two_arrays;
 
 
 class Solution {

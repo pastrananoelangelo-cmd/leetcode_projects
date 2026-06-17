@@ -1,4 +1,4 @@
-package move_zeroes;
+package easy.move_zeroes;
 
 class Solution {
     public void moveZeroes(int[] nums) {

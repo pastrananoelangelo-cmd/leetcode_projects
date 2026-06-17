@@ -1,4 +1,4 @@
-package max_consecutive_ones;
+package easy.max_consecutive_ones;
 
 
 class Solution {

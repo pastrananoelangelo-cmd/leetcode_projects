@@ -1,4 +1,4 @@
-package shuffle_the_array;
+package easy.shuffle_the_array;
 
 
 class Solution {

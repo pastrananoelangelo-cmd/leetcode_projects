@@ -1,4 +1,4 @@
-package reverse_string;
+package easy.reverse_string;
 
 
 class Solution {

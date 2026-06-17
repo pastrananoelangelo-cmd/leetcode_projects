@@ -1,0 +1,20 @@
+Pattern:
+Maintain two synchronized stacks:
+    - one stores actual values;
+    - one stores the minimum value seen up to each position,
+then just do push for push(), pop for pop(), and peek for getMin() and top().
+
+Data Structure:
+Two Stacks: Original and Minimum
+
+Invariant:
+At every index, min[i] stores the minimum value among stack[0..i].
+The original and minimum stacks must go hand-in-hand, 
+where if you pop in original, do the same for minimum.
+
+Time Complexity:
+push() → O(1)
+pop() → O(1)
+top() → O(1)
+getMin() → O(1)
+Overall = O(1)

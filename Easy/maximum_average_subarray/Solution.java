@@ -1,4 +1,4 @@
-package maximum_average_subarray;
+package easy.maximum_average_subarray;
 
 
 class Solution {

@@ -1,4 +1,4 @@
-package find_numbers_even_digits;
+package easy.find_numbers_even_digits;
 
 
 class Solution {

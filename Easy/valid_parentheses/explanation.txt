@@ -1,0 +1,13 @@
+Pattern:
+Push opening brackets into a stack.
+For each closing bracket, the top of the stack must be the matching opening bracket.
+
+Data Structure:
+Stacks/Array
+
+Invariant:
+The stack always contains unmatched opening brackets in the order they appear, 
+and the top of the stack is the most recent unmatched opening bracket.
+
+Time Complexity:
+O(n)

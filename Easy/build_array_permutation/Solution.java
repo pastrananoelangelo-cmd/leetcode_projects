@@ -1,4 +1,4 @@
-package build_array_permutation;
+package easy.build_array_permutation;
 
 class Solution {
     public int[] buildArray(int[] nums) {

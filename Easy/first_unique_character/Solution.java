@@ -1,4 +1,4 @@
-package first_unique_character;
+package easy.first_unique_character;
 
 
 class Solution {

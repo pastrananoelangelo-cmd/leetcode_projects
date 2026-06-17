@@ -1,4 +1,4 @@
-package valid_palindrome;
+package easy.valid_palindrome;
 
 
 class Solution {

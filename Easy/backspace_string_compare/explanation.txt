@@ -1,0 +1,13 @@
+Pattern:
+Process through i to length of each String.
+If the current char is #, pop the stack of the corresponding string.
+Else, keep pushing them in the stacks.
+
+Data Structure:
+Two Stacks, two Strings.
+
+Invariant:
+The final value of the Strings are the processed stacks from the initial strings.
+
+Time:
+O(n + m)

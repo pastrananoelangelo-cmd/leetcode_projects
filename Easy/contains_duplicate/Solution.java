@@ -1,4 +1,4 @@
-package contains_duplicate;
+package easy.contains_duplicate;
 
 
 class Solution {

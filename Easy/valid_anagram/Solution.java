@@ -1,4 +1,4 @@
-package valid_anagram;
+package easy.valid_anagram;
 
 
 class Solution {

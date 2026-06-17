@@ -1,4 +1,4 @@
-package running_sum_1d_array;
+package easy.running_sum_1d_array;
 
 
 class Solution {

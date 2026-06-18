@@ -1,0 +1,7 @@
+Brute force: Compare every string against every other string.
+Weak point: Repeated comparisons.
+Repeated information: Anagrams have identical character composition.
+Pattern: Normalize → Group
+Data Structure: HashMap
+Invariant: All words inside one bucket share the same normalized representation.
+Time Complexity: O(n * klog(k))

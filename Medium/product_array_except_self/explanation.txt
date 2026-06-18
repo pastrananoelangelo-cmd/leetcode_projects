@@ -1,0 +1,19 @@
+Pattern:
+The brute force work because we just look at the left and right of the current index. 
+But how can we simplify the process without looking at the left and right side of the current index? 
+Well, we separate them. But how does it work? Instead looking at the answer, 
+I look at how their indices work. 
+Right: [(n/a), (3), (3, 2), (3, 2, 1)] 
+Left: [(n/a), (0), (0, 1), (0, 1, 2)] 
+
+If we look at the indices, we can see a pattern for each answer: 
+ans: [Right[3] + Left[0], Right[2] + Left[1], Right[1] + Left[2], Right[0] + Left[3]]
+
+Data Structure:
+Array
+
+Invariant:
+Multiply all numbers except for the current i.
+
+Time Complexity:
+O(n)

@@ -1,0 +1,4 @@
+Pattern: Shrink the half where the boundary of the target exists.
+Data structure: None.
+Invariant: We shrink the half because it is where the target boundary exists.
+Time complexity: O(log n)

@@ -1,0 +1,12 @@
+Pattern: 
+Maintain a structure of size k that always contains the k largest elements seen so far.
+If a new element is larger than the smallest in the structure, replace it.
+
+Data structure: Heap.
+
+Invariant: 
+The heap stores the k largest elements,
+and its top is the smallest among them,
+which is exactly the k-th largest overall.
+
+Time complexity: O(n log k), where k is the number of k (heap).

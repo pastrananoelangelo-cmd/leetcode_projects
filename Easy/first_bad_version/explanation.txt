@@ -1,0 +1,12 @@
+Pattern: 
+Separate good and bad using binary search, if the middle is good, then move left to mid to eliminate
+the good, but if it is bad, move right to mid to keep searching the lowest bad.
+
+Data structure: None.
+
+Invariant: 
+At any time, the answer (first bad version) lies within [left, right].
+All versions before a known-good mid are excluded.
+All versions from a known-bad mid are still candidates.
+
+Time complexity: O(log n)

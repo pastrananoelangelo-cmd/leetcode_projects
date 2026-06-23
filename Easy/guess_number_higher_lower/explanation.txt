@@ -1,0 +1,12 @@
+Pattern: 
+Binary search: 
+    if guess() is -1, move right to mid - 1.
+    if guess() is 1, move left to mid + 1.
+    if guess() is 0, return mid.
+
+Data structure: None.
+
+Invariant: 
+The answer lies in [1, n], which can be completely solved using binary search.
+
+Time complexity: O(log n)

@@ -1,0 +1,27 @@
+Pattern: 
+At every iteration, at least one half
+[left...mid] or [mid...right]
+must be sorted.
+
+The target, if it exists, is always preserved
+inside the remaining search range.
+
+Data Structure: None.
+
+Invariant: One side (From Left to Mid or Mid to Right) is definitely sorted.
+
+Time Complexity:
+O(log n)
+
+Decision Tree:
+Is left sorted?
+│
+├── Yes
+│   ├── Target inside?
+│   │     └── Search left
+│   └── Otherwise search right
+│
+└── No → right sorted
+    ├── Target inside?
+    │     └── Search right
+    └── Otherwise search left

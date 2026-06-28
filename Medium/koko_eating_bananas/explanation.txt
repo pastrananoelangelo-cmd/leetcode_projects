@@ -1,0 +1,12 @@
+Pattern:
+Binary Search on Answer
+
+Data Structure:
+None
+
+Invariant:
+If speed k works,
+all larger speeds also work.
+
+Time:
+O(n log(maxPile))

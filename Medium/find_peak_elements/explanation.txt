@@ -1,0 +1,31 @@
+Pattern: 
+Compare middle with its next element.
+
+If nums[mid] < nums[mid+1]:
+→ we are ascending
+→ a peak must exist on the right
+→ search right
+
+If nums[mid - 1] > nums[mid]::
+→ we are descending 
+→ a peak must exist on the left
+→ search left
+
+Else: nums[mid - 1] < nums[mid] > nums[mid + 1]
+→ it is the peak.
+→ return the peak.
+
+Data structure: None.
+
+Invariant: 
+There is always at least one peak
+inside the current search range.
+
+Then:
+Ascending at mid
+→ peak cannot disappear on right
+
+Descending at mid
+→ peak cannot disappear on left
+
+Time complexity: O(log n)

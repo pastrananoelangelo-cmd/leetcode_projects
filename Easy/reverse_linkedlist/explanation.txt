@@ -1,0 +1,22 @@
+Pattern:
+Reverse the linked list by rewiring pointers.
+
+Save the next node first:
+next = current.next
+
+Reverse direction:
+current.next = prev
+
+Advance the pointers:
+prev = current
+current = next
+
+Data Structure:
+Linked List
+
+Invariant:
+prev = head of reversed portion
+current = head of unreversed portion
+
+Time Complexity:
+O(n)

@@ -1,0 +1,15 @@
+Pattern:
+Traverse the linked list with fast and slow pointers.
+
+Data Structure:
+Linked List
+
+Invariant:
+If a cycle exists, fast will eventually catch slow.
+Otherwise, fast reaches null → return false.
+
+Time Complexity:
+O(n)
+
+Space Complexity:
+O(1)

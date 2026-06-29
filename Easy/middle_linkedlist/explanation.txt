@@ -1,0 +1,20 @@
+Pattern:
+Traverse the linked list using fast and slow pointers.
+
+Fast moves 2 nodes per iteration.
+Slow moves 1 node per iteration.
+
+When fast reaches the end,
+slow reaches the middle.
+
+Data Structure:
+Linked List
+
+Invariant:
+slow has traversed half the distance of fast:
+
+If fast reaches the end,
+slow points to the middle node.
+
+Time Complexity:
+O(n)

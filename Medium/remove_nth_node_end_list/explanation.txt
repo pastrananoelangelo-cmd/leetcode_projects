@@ -1,0 +1,39 @@
+Pattern:
+Dummy + Fixed Gap (Fast / Slow)
+Create a gap of n nodes between fast and slow.
+Move both pointers together until fast reaches the last node.
+
+At that point:
+slow is positioned one node before the target.
+
+Rewire:
+slow.next = slow.next.next
+
+Data Structure:
+Linked List
+
+Invariant:
+The distance between slow and fast remains n nodes.
+dummy.next always points to the head of the modified linked list.
+slow always stays one node before the node to remove.
+
+Time Complexity:
+O(n)
+
+Space Complexity:
+O(1)
+
+Additional Learning:
+When removing a node in a linked list,
+do not step on the node to remove.
+
+Stay one node before it,
+then rewire:
+
+slow.next = slow.next.next
+
+Dummy nodes are useful when the head itself may change
+(e.g. removing the first node).
+
+Linked Lists are often solved by changing connections
+instead of creating new nodes.

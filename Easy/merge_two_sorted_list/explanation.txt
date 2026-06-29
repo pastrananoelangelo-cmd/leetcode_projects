@@ -1,0 +1,26 @@
+Pattern:
+Dummy + Tail
+Dummy remains fixed and preserves access to the head of the merged list.
+Tail moves through the result and attaches the smaller node from list1 or list2.
+
+When one list becomes empty,
+attach the remaining chain directly.
+
+Data Structure:
+Linked List
+
+Invariant:
+dummy.next contains the sorted linked list built so far.
+tail points to the last node of the merged portion.
+
+Time Complexity:
+O(n)
+
+Additional Learning:
+Linked Lists are often about reconnecting existing nodes.
+
+Assigning one node to another does not copy the node—
+it copies the reference to that node.
+
+By changing next pointers while traversing,
+we can rewrite the structure without creating new nodes.

@@ -1,0 +1,91 @@
+Pattern: Recursion.
+
+Data Structure: Binary Tree
+
+Invariant:
+After isSameTree(p, q) returns:
+
+true → the subtrees rooted at p and q are structurally identical and all corresponding node values are equal.
+false → at least one structure mismatch or value mismatch was found.
+
+Time Complexity: O(n)
+
+Idea:
+Visit each corresponding node once.
+Stops early if a mismatch is found (&& short-circuit).
+
+Definition:
+Two trees are the same if:
+1. Their structure is identical
+2. Their values are identical
+
+Cases:
+1. p == null && q == null
+→ return true
+(Both reached end together)
+
+2. p == null || q == null
+→ return false
+(Structure mismatch)
+
+3. p.val != q.val
+→ return false
+(Value mismatch)
+
+4. Otherwise:
+→ Compare left subtree
+→ Compare right subtree
+
+return leftSame && rightSame
+
+Example:
+
+p:          1
+           / \
+          2   3
+
+q:          1
+           / \
+          2   3
+
+Traversal:
+
+same(1,1)
+=
+same(2,2)
+&&
+same(3,3)
+
+same(2,2)
+=
+same(null,null)
+&&
+same(null,null)
+=
+true
+
+same(3,3)
+=
+same(null,null)
+&&
+same(null,null)
+=
+true
+
+same(1,1)
+=
+same(2, 2) && same(3, 3) // true && true
+return true
+
+Base Case:
+Both null → true
+One null → false
+Values differ → false
+
+Additional Learning:
+Equal values
+≠ immediately return true
+
+because equality only means:
+"No mismatch yet.
+Keep checking."

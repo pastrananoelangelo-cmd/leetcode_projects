@@ -1,0 +1,35 @@
+Pattern: Recursion.
+If root is null: return 0 (Base Case)
+Otherwise: return 1 + max(depth(root.left), depth(root.right))
+
+Data Structure: Binary Tree
+
+Invariant:
+maxDepth(node) returns the depth of the subtree rooted at node.
+
+Time Complexity:
+O(n), number of nodes.
+
+Idea:
+        3
+       / \
+      9  20
+         / \
+        15  7
+
+First: Visit each node by going down
+depth(3) = 1 + max(depth(9), depth(20))
+depth(9) = 1 + max(depth(null), depth(null))
+depth(20) = 1 + max(depth(15), depth(7))
+depth(15) = 1 + max(depth(null), depth(null))
+depth(7) = 1 + max(depth(null), depth(null))
+
+Second: When all nodes reaches null, compute result by going up.
+depth(7) = 1 + max(0, 0) = 1
+depth(15) = 1 + max(0, 0) = 1
+depth(20) = 1 + max(1, 1) = 2
+depth(9) = 1 + max(0, 0) = 1
+depth(3) = 1 + max(1, 2) = 3
+Ans: 3
+
+Base Case: root == null, return 0

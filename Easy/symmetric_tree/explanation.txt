@@ -1,0 +1,83 @@
+Pattern: Recursion (DFS)
+
+Data Structure: Binary Tree
+
+Invariant:
+After mirror(left, right) returns:
+
+true → the subtree rooted at left is a mirror image of the subtree rooted at right
+false → either the structure is not mirrored or at least one pair of corresponding values differs
+
+Time Complexity: O(n)
+
+Idea:
+Visit each node at most once.
+Can stop early when a mismatch is found (&& short-circuit).
+
+Definition:
+A tree is symmetric if the left subtree
+is the mirror of the right subtree.
+
+Mirror means:
+1. Values are equal
+2. Outer children match
+3. Inner children match
+
+Example:
+
+        1
+       / \
+      2   2
+     / \ / \
+    3  4 4  3
+
+Compare:
+
+mirror(2,2)
+=
+mirror(3,3)
+&&
+mirror(4,4)
+
+Recursive Rule:
+mirror(left, right)
+
+1. Both null
+→ return true
+(Both sides ended together)
+
+2. One null
+→ return false
+(Structure mismatch)
+
+3. Values differ
+→ return false
+(Value mismatch)
+
+4. Otherwise
+→ compare outer children
+→ compare inner children
+
+return
+mirror(left.left, right.right)
+&&
+mirror(left.right, right.left)
+
+Visualization:
+Fold the tree vertically.
+
+left.left  ↔ right.right
+left.right ↔ right.left
+
+Base Case:
+root == null
+→ return true
+
+left == null && right == null
+→ return true
+
+left == null || right == null
+→ return false
+
+left.val != right.val
+→ return false

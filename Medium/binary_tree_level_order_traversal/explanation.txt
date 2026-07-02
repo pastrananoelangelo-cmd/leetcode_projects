@@ -1,0 +1,135 @@
+Pattern: 
+Breadth-First Search (BFS)
+using Queue + Iteration
+
+Data Structure: Binary Tree
+
+Invariant:
+At the beginning of each while-loop iteration,
+the queue contains exactly the nodes of the current level.
+
+During the for-loop,
+those nodes are removed from the queue,
+their values are stored in 'level',
+and their children are added to the queue,
+forming the next level.
+
+
+Time Complexity: O(n)
+
+Idea:
+Traverse the tree level by level
+instead of following one path to the bottom.
+
+A queue stores the nodes waiting
+to be processed in the next level.
+
+Process every node in the current level,
+then move to the next.
+
+I solved it with this concept: Top to bottom, left to right.
+
+Example:
+
+        3
+       / \
+      9   20
+          / \
+         13  4
+
+
+First level:
+queue = [3]
+while queue is not empty:
+    
+    size = 1
+    level = []
+    loop i through size:
+        curr = queue.poll() // pop = 3
+
+        if 3.left exists:
+            queue = [9]
+        if 3.right exists:
+            queue = [9, 20]
+        
+        level = [3]
+    
+    ans = [[3]]
+
+
+Second Level:
+queue = [9, 20]
+while queue is not empty:
+    
+    size = 2
+    level = []
+    loop i through size:
+        curr = queue.poll() // pop = 9
+
+        if 9.left exists:
+            queue = []
+        if 9.right exists:
+            queue = []
+        
+        level = [9]
+    
+    ans = [[3]]
+
+
+queue = [20]
+while queue is not empty:
+    
+    size = 1
+    level = []
+    loop i through size:
+        curr = queue.poll() // pop = 20
+
+        if 20.left exists:
+            queue = [13]
+        if 20.right exists:
+            queue = [13, 4]
+        
+        level = [9, 20]
+    
+    ans = [[3], [9, 20]]
+
+
+Third Level:
+queue = [13, 4]
+while queue is not empty:
+    
+    size = 2
+    level = []
+    loop i through size:
+        curr = queue.poll() // pop = 13
+
+        if 13.left exists:
+            queue = []
+        if 13.right exists:
+            queue = []
+        
+        level = [13]
+    
+    ans = [[3], [9, 20]]
+
+
+queue = [4]
+while queue is not empty:
+    
+    size = 1
+    level = []
+    loop i through size:
+        curr = queue.poll() // pop = 4
+
+        if 4.left exists:
+            queue = []
+        if 4.right exists:
+            queue = []
+        
+        level = [13, 4]
+    
+    ans = [[3], [9, 20], [13, 4]]
+
+
+queue = []
+Since queue is empty return ans = [[3], [9, 20], [13, 4]]

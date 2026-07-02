@@ -1,0 +1,96 @@
+Pattern: Recursion (DFS)
+
+Data Structure: Binary Tree
+
+Invariant:
+For every call hasPathSum(root, targetSum),
+targetSum represents the remaining sum needed
+for a root-to-leaf path starting at the current root.
+
+If the function returns true,
+there exists a root-to-leaf path whose values
+sum to the original target.
+
+Time Complexity: O(n)
+
+Idea:
+Subtract the current node's value from targetSum
+while traversing downward.
+
+When a leaf is reached,
+check whether the remaining targetSum is 0.
+
+Definition:
+hasPath(root, targetSum) returns true
+if there exists a root-to-leaf path
+starting at root whose values sum to targetSum.
+
+hasPath is true if:
+1. root.left == null
+2. root.right == null
+3. targetSum == 0
+
+
+Example: targetSum == 22
+
+        5
+       / \
+      4   8
+     /   / \
+    11  13  4
+   / \
+  7   2
+
+hasPath(5, 22)  = targetSum = 17
+                = hasPath(4, 17) || hasPath(8, 17)
+
+hasPath(4, 17)  = targetSum = 13
+                = hasPath(11, 13)
+
+hasPath(11, 13) = targetSum = 2
+                = hasPath(7, 2) || hasPath(2, 2)
+
+hasPath(7, 2)   = targetSum = -5
+                = 7.left == null && 7.right == null && targetSum != 0
+                = return false
+
+hasPath(2, 2)   = targetSum = 0
+                = 2.left == null && 2.right == null && targetSum == 0
+                = return true
+
+hasPath(11, 13) = false || true
+                = true
+
+hasPath(4, 17)  = true
+
+hasPath(5, 22)  = true || hasPath(8, 17) 
+// Since there is a true in OR, then it will be returned true.
+// But for the sake of learning, let's continue the right path.
+
+hasPath(8, 17)  = targetSum = 9
+                = hasPath(13, 9) || hasPath(4, 9)
+
+hasPath(13, 9)  = targetSum = -4
+                = 13.left == null && 13.right == null && targetSum != 0
+                = return false
+
+hasPath(4, 9)  = targetSum = 5
+                = 4.left == null && 4.right == null && targetSum != 0
+                = return false
+
+hasPath(8, 17)  = false || false
+                = false
+
+hasPath(5, 22)  = true || false
+                = return true
+
+
+Base Case:
+root == null // No tree, no targetSum
+→ return false
+
+root.left == null && root.right == null && targetSum == 0
+→ return true
+
+root.left == null && root.right == null && targetSum != 0
+→ return false

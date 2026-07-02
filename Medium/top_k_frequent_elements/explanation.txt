@@ -1,0 +1,14 @@
+Pattern: 
+1. Count frequencies with a HashMap.
+2. Maintain a min heap of size k containing the k most frequent elements.
+
+Data structure: 
+HashMap<Integer, Integer>
+Min Heap of (number, frequency) pairs (PriorityQueue<int[]>)
+
+Invariant: 
+After processing some entries of the frequency map, the heap contains the 
+k most frequent (number, frequency) pairs seen so far, with the smallest 
+frequency among them at the root.
+
+Time complexity: O(n log k)

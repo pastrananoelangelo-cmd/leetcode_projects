@@ -1,0 +1,11 @@
+Pattern: Store all stones in a max heap, then repeatedly remove the two heaviest stones, 
+smash them together, and insert the remaining stone (if any) back into the heap.
+
+Data structure: Max Heap (PriorityQueue)
+
+Invariant: 
+At the start of each iteration, maxHeap contains exactly all of the stones 
+that still exist after the previous smashes, and the largest remaining stone 
+is at the top of the heap.
+
+Time complexity: O(n log n)

@@ -1,0 +1,29 @@
+Pattern:
+Store the head of each non-empty linked list in a min heap.
+Repeatedly remove the smallest node, append it to the merged list,
+and insert its next node (if it exists) back into the heap.
+
+Data Structure:
+Min Heap (PriorityQueue<ListNode>)
+Dummy Node + Tail Pointer
+
+Invariant:
+At the start of each iteration, the heap contains exactly one
+candidate from every non-empty list: the smallest unmerged node
+remaining in that list. The merged list contains all previously
+selected nodes in sorted order.
+
+Time Complexity:
+O(N log k)
+
+Space Complexity:
+O(k)
+
+Idea:
+Since each linked list is already sorted, we never need to look at
+every node at once. The only node that can be chosen from a list is
+its current head. Therefore, we store only the head of each list in
+the min heap. After removing the smallest node, we append it to the
+answer and insert its next node into the heap. This keeps at most
+one node from each list in the heap while always giving us the next
+smallest element.

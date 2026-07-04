@@ -1,0 +1,107 @@
+Pattern: 
+Backtracking = DFS + Undo
+For every element in nums, make one decision: Take or Skip. 
+Continue recursively until all decisions have been made (index == nums.length). 
+At each leaf, the current subset is one complete answer.
+
+Data Structure: List<List<Integer>>
+
+Invariant: THE LEAVES ARE THE POWER SET. XD
+
+Time Complexity:
+O(n * 2^n), n for copying it to currSub, 2^n for root to tree.
+
+For example: [1, 2]
+         []     
+        /  \
+     [1]    []       Element 1
+     / \    / \  
+[1,2] [1] [2]  []    Element 2
+
+Step-by-Step:
+Explore:
+    ans = []
+    currSub = []
+    nums = [1, 2]
+    index = 0
+
+Explore: Take 1
+    ans = []
+    currSub = [1]
+    nums = [1, 2]
+    index = 0 (currentIndex) + 1 = 1
+
+Explore: Take 2
+    ans = []
+    currSub = [1, 2]
+    nums = [1, 2]
+    index = 1 (currentIndex) + 1 = 2
+
+Explore: if (nums.length == index): ans.add(new ArrayList<>(currSub))
+    ans = [[1, 2]]
+    currSub = [1, 2]
+    nums = [1, 2]
+    index = 2
+
+Explore: BACKTRACK, remove last element: 2
+    ans = [[1, 2]]
+    currSub = [1]
+    nums = [1, 2]
+    index = 1
+
+Explore: Skip 2
+    ans = [[1, 2]]
+    currSub = [1]
+    nums = [1, 2]
+    index = 1 (currentIndex) + 1 = 2
+
+Explore: if (nums.length == index): ans.add(new ArrayList<>(currSub))
+    ans = [[1, 2], [1]]
+    currSub = [1]
+    nums = [1, 2]
+    index = 2
+
+Explore: (BACKTRACK)
+    ans = [[1, 2], [1]]
+    currSub = []
+    nums = [1, 2]
+    index = 0
+
+Explore: Skip 1
+    ans = [[1, 2], [1]]
+    currSub = []
+    nums = [1, 2]
+    index = 0 (currentIndex) + 1 = 1
+
+Explore: Take 2
+    ans = [[1, 2], [1]]
+    currSub = [2]
+    nums = [1, 2]
+    index = 1 (currentIndex) + 1 = 2
+
+Explore: if (nums.length == index): ans.add(new ArrayList<>(currSub))
+    ans = [[1, 2], [1], [2]]
+    currSub = [2]
+    nums = [1, 2]
+    index = 2
+
+Explore: (BACKTRACK), remove last element: 2
+    ans = [[1, 2], [1], [2]]
+    currSub = []
+    nums = [1, 2]
+    index = 1
+
+Explore: Skip 2
+    ans = [[1, 2], [1], [2]]
+    currSub = []
+    nums = [1, 2]
+    index = 2
+
+Explore: if (nums.length == index): ans.add(new ArrayList<>(currSub))
+    ans = [[1, 2], [1], [2], []]
+    currSub = []
+    nums = [1, 2]
+    index = 2
+
+Stack Function calls finishes.
+ans = [[1, 2], [1], [2], []]

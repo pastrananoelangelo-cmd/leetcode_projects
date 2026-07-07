@@ -1,0 +1,29 @@
+Example: [1, 2, 3]
+i = 0
+[1]
+[1, 2]
+[1, 2, 3]
+[1, 2, 3]   => list.size() == original.size()
+            => store list
+
+Backtrack
+[1, 2], No next number available.
+[1, 2]      => list.size != original.size()
+            => skip
+
+Backtrack
+[1]
+[1, 3]
+[1, 3, 2]
+[1, 3, 2]   => list.size() == original.size()
+            => store list
+
+Backtrack
+[1, 3], No next number available.
+[1, 3]      => list.size != original.size()
+            => skip
+
+Backtrack
+No next num, new iteration.
+i = 1
+[2]

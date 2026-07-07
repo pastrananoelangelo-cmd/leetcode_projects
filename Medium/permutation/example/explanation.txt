@@ -1,0 +1,149 @@
+Base Case: depth == 3
+
+Idea 1:
+i < 1
+j < 1
+
+for i = 0:
+    bp(0): depth = i (0)
+        j = 0, depth = 0
+        depth++
+        bp(1):
+            j = 0, depth = 1
+            depth++
+            bp(2):
+                j = 0, depth = 2
+                depth++
+                bp(3):
+                    print: Reached.
+                j++
+                j = 1, loop ends
+            j++
+            j = 1, loop ends
+        j++
+        j = 1, loop ends
+    i++
+    i = 1, loop ends
+
+
+Idea 2:
+i < 2
+j < 1
+
+for i = 0:
+    bp(0): depth = i (0)
+        j = 0, depth = 0
+        depth++
+        bp(1):
+            j = 0, depth = 1
+            depth++
+            bp(2):
+                j = 0, depth = 2
+                depth++
+                bp(3):
+                    print: Reached.
+                j++
+                j = 1, loop ends
+            j++
+            j = 1, loop ends
+        j++
+        j = 1, loop ends
+    
+    i = 1
+    bp(1): depth = i (1)
+        j = 0, depth = 1
+        depth++
+        bp(2):
+            j = 0, depth = 2
+            depth++
+            bp(3):
+                print: Reached
+            j++
+            j = 1, loop ends
+        j++
+        j = 1, loop ends
+    
+    i++
+    i = 2, loop ends
+
+
+Idea 3:
+i < 1
+j < 2
+
+for i = 0:
+    bp(0): depth = i (0)
+        j = 0, depth = 0
+        depth++
+        bp(1):
+            j = 0, depth = 1
+            depth++
+            bp(2):
+                j = 0, depth = 2
+                depth++
+                bp(3):
+                    print: Reached
+                j++
+                j = 1, depth = 2
+                bp(3):
+                    print: Reached
+                j++
+                j = 2, loop ends
+            
+            j++
+            j = 1, depth = 1
+            depth++
+            bp(2):
+                j = 0, depth = 2
+                depth++
+                bp(3):
+                    print: Reached
+                j++
+                j = 1, depth = 2
+                depth++
+                bp(3):
+                    print: Reached
+                j++
+                j = 2, loop ends
+            j = 2, loop ends
+        j++
+        j = 1, depth = 0
+        depth++
+        bp(1):
+            j = 0, depth = 1
+            depth++
+            bp(2):
+                j = 0, depth = 2
+                depth++
+                bp(3):
+                    print: Reached
+                j++
+                j = 1, depth = 2
+                depth++
+                bp(3):
+                    print: Reached
+                j++
+                j = 2, loop ends
+            j++
+            j = 1, depth = 1
+            depth++
+            bp(2):
+                j = 0, depth = 2
+                bp(3):
+                    print: Reached
+                j++
+                j = 1, depth = 2
+                depth++
+                bp(3):
+                    print: Reached
+                j++
+                j = 2, loop ends
+            j++
+            j = 2, loop ends
+        j++
+        j = 2, loop ends
+    i++
+    i = 1, loop ends
+
+            
+

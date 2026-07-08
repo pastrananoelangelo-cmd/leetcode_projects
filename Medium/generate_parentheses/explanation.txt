@@ -1,0 +1,69 @@
+Idea: Every recursive call is about choosing between '(' or ')'.
+If open < n, append '('
+If open > close, append ')'
+
+Example: n = 3
+(
+    ((
+    (((
+    ((()
+    ((())
+    ((())) // Store
+
+    Backtrack:
+    ((())
+    ((()
+    (((
+    ((
+
+((
+    (()
+    (()(
+    (()()
+    (()()) // Store
+
+    Backtrack:
+    (()()
+    (()(
+    (()
+
+(()
+    (())
+    (())(
+    (())() // Store
+
+    Backtrack:
+    (())(
+    (())
+    (()
+    ((
+    (
+
+(
+    ()
+    ()(
+    ()((
+    ()(()
+    ()(()) // Store
+
+    Backtrack:
+    ()(()
+    ()((
+    ()(
+
+()(
+    ()()
+    ()()(
+    ()()() // Store
+
+    Backtrack:
+    ()()(
+    ()()
+    ()(
+    ()
+    (
+
+The recursion finishes after every valid branch has
+been explored and every recursive call has returned
+to the initial call.
+

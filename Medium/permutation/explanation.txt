@@ -1,5 +1,5 @@
-Idea: "Every recursive call explores every possible continuation 
-of the current permutation, and every leaf is one complete permutation."
+Idea: Every recursive call explores every possible continuation 
+of the current permutation, and every leaf is one complete permutation.
 
 Example: [1, 2, 3]
         [1]

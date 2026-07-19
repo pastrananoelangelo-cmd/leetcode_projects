@@ -1,0 +1,174 @@
+Pattern: 
+Graph DFS
+For every grid: 
+1. Check if it is within bounds and;
+2. If current grid is equal to the starting state.
+    2.1 If the current grid is equal to the starting state, change it to color.
+    2.2 Else, skip.
+
+Recursive State:
+    Current Position:
+    (row, col)
+
+    Shared Data:
+    image
+    startColor
+    newColor
+
+Invariant: 
+Every cell that has already been visited has been recolored, 
+and every recursive call only continues from cells that still have the original starting color.
+
+Time Complexity: O(m × n)
+
+Idea:
+Input: image = [[1,1,1],[1,1,0],[1,0,1]], sr = 1, sc = 1, color = 2
+
+[1, 1, 1]       [1, 1, 1]       [1, 1, 1]
+[1, 1, 0] ->    [1, 2, 0] ->    [2, 2, 0]
+[1, 0, 1]       [1, 0, 1]       [1, 0, 1]
+
+[2, 1, 1]       [2, 2, 1]       [2, 2, 2]
+[2, 2, 0] ->    [2, 2, 0] ->    [2, 2, 0]
+[1, 0, 1]       [1, 0, 1]       [1, 0, 1]
+
+[2, 2, 2]
+[2, 2, 0]
+[2, 0, 1]
+
+Step-by-Step:
+DFS(1, 1)
+    Fill
+
+    Try Left:
+    DFS(1, 0)
+        Fill
+
+        Try Left:
+        DFS(1, -1)
+            Out of Bounds
+            Return
+
+        Try Right:
+        DFS(1, 1)
+            Already Fill
+            Return
+
+        Try Up:
+        DFS(0, 0)
+            Fill
+
+            Try Left:
+            DFS(0, -1)
+                Out of Bounds
+                Return
+            
+            Try Right:
+            DFS(0, 1)
+                Fill
+
+                Try Left:
+                DFS(0, 0)
+                    Already Fill
+                    Return
+                
+                Try Right:
+                DFS(0, 2)
+                    Fill
+
+                    Try Left:
+                    DFS(0, 1)
+                        Already Fill
+                        Return
+                    
+                    Try Right:
+                    DFS(0, 3)
+                        Out of Bounds
+                        Return
+                    
+                    Try Up:
+                    DFS(-1, 2)
+                        Out of Bounds
+                        Return
+                    
+                    Try Down:
+                    DFS(1, 2)
+                        Invalid
+                        Return
+                    
+                    Return
+                
+                Try Up:
+                DFS(-1, 1)
+                    Out of Bounds
+                    Return
+                
+                Try Down:
+                DFS(1, 1)
+                    Already Fill
+                    Return
+                
+                Return
+            
+            Try Up:
+            DFS(-1, 0)
+                Out of Bounds
+                Return
+            
+            Try Down:
+            DFS(1, 0)
+                Already Fill
+                Return
+
+            Return
+        
+        Try Down:
+        DFS(2, 0)
+            Fill
+
+            Try Left:
+            DFS(2, -1)
+                Out of Bounds
+                Return
+            
+            Try Right:
+            DFS(2, 1)
+                Invalid
+                Return
+            
+            Try Up:
+            DFS(1, 0)
+                Already Fill
+                Return
+            
+            Try Down:
+            DFS(3, 0)
+                Out of Bounds
+                Return
+            
+            Return
+        
+        Return
+    
+    Try Right:
+    DFS(1, 2)
+        Invalid
+        Return
+    
+    Try Up:
+    DFS(0, 1)
+        Already Fill
+        Return
+    
+    Try Down:
+    DFS(2, 1)
+        Invalid
+        Return
+    
+    Return
+
+Return
+
+
+    
+

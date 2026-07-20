@@ -1,0 +1,92 @@
+Pattern:
+Graph DFS (Path Search)
+Represent the graph using an adjacency list.
+Starting from the source node, recursively explore every unvisited neighbor 
+until the destination is found or all possible paths have been exhausted.
+
+Recursive State:
+    Map<Integer, List<Integer>>, Graph
+    Set, Nodes that have been visited
+    curr, current Node
+    dest, destination
+
+Invariant: 
+DFS will continue to search for a path starting from the source.
+1. If current == destination, return true.
+2. If set contains current, return false as it has been traversed.
+3. Store the nodes in set that have been traversed.
+4. If there are no more paths from the current, return false.
+
+Time Complexity: O(V + E)
+
+Idea:
+Graph DFS (Boolean Search)
+
+For each neighbor:
+    If DFS(neighbor) returns true:
+        return true
+
+No neighbor reaches the goal:
+    return false
+
+
+Example:
+
+0 --- 1
+|
+2 --- 3 --- 4
+
+edges = [[0,1],[0,2],[2,3],[3,4]]
+source = 0
+destination = 4
+
+Adjacency List:
+
+0 -> [1,2]
+1 -> [0]
+2 -> [0,3]
+3 -> [2,4]
+4 -> [3]
+
+Visited = {}
+
+Start:
+DFS(0)
+
+Visited = {0}
+    Try Neighbor 1:
+        DFS(1)
+
+        Visited = {0,1}
+
+        Neighbor 0 is already visited.
+        No more neighbors.
+        Return false.
+
+    Back to DFS(0)
+
+    Try Neighbor 2:
+        DFS(2)
+
+        Visited = {0,1,2}
+
+        Try Neighbor 3:
+            DFS(3)
+
+            Visited = {0,1,2,3}
+
+            Try Neighbor 4:
+                DFS(4)
+
+                Current == Destination
+
+                Return true
+
+        DFS(3) receives true
+        Return true
+
+    DFS(2) receives true
+    Return true
+
+DFS(0) receives true
+Return true

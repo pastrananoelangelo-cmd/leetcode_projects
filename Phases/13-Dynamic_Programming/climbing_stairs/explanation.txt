@@ -1,0 +1,33 @@
+Pattern: Dynamic Programming
+Two approaches:
+1. Tabulation (Bottom-Up)
+   - Start from the base cases.
+   - Build the solution iteratively until reaching the target state.
+2. Memoization (Top-Down)
+   - Solve recursively using DFS.
+   - Cache previously computed states to avoid recomputation.
+
+State Definition:
+dp[i] = the number of distinct ways to reach stair i.
+
+Recursive State:
+    int n, current stair
+    HashMap<Integer, Integer> memo, stores the number of ways
+    to reach each previously computed stair.
+
+Invariant: 
+For Tabulation:
+    Before computing dp[i], all previous states
+    dp[1] through dp[i-1] have already been computed,
+    so dp[i] can be built directly from them.
+For Memoization:
+    Each state is computed at most once.
+    If a state has already been solved,
+    its stored value is returned immediately
+    instead of recursively recomputing it.
+
+Time Complexity: O(n)
+
+Space Complexity:
+Tabulation: O(1)
+Memoization: O(n)

@@ -1,0 +1,56 @@
+Pattern: Dynamic Programming
+Two approaches:
+1. Tabulation (Bottom-Up)
+   - Start from the base cases.
+   - Build the solution iteratively until reaching the target state.
+2. Memoization (Top-Down)
+   - Solve recursively using DFS.
+   - Cache previously computed states to avoid recomputation.
+
+State Definition: 
+dfs(i) returns the maximum money that can be robbed 
+starting from house i.
+
+Recursive State:
+    int[] nums, given array
+    HashMap<Integer, Integer> memo, stores previously computed 
+    maximum amount of money robbed from i
+    int curr, current index
+
+Invariant: 
+For Tabulation:
+    Before computing dp[i], the required subproblems
+    dp[i - 1] and dp[i - 2] have already been computed.
+    Therefore, dp[i] can be computed directly from them.
+For Memoization:
+    Each state is computed at most once.
+    If a state has already been solved,
+    its stored value is returned immediately
+    instead of recursively recomputing it.
+
+Time Complexity: O(n)
+
+Space Complexity:
+Tabulation: O(n)
+Memoization: O(n)
+
+Idea:
+// Memoization
+nums = [7, 2, 3, 9, 5]
+dp(4) = max(nums[4] + 0, 0) = 5
+dp(3) = max(nums[3] + 0, dp(4)) = 9
+dp(2) = max(nums[2] + dp(4), dp(3)) = 9
+dp(1) = max(nums[1] + dp(3), dp(2)) = 11
+dp(0) = max(nums[0] + dp(2), dp(1)) = 16
+
+// Tabulation
+nums = [7, 2, 3, 9, 5]
+
+// Initialize:
+tab(0) = nums[0] = 7
+tab(1) = max(nums[0], nums[1]) = 7
+
+// Loop:
+tab(2) = max(nums[2] + tab(0), tab(1)) = 10
+tab(3) = max(nums[3] + tab(1), tab(2)) = 16
+tab(4) = max(nums[4] + tab(2), tab(3)) = 16
